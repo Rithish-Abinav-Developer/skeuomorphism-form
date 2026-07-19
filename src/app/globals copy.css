@@ -22,7 +22,7 @@ form{
   background-color: rgb(230, 230, 230);
   padding: 60px;
   border-radius: 30px;
-  box-shadow: -2px -2px 7px rgba(255, 255, 255, 0.9) , 2px 2px 4px rgb(185, 185, 185);
+  box-shadow: -4px -4px 20px rgba(255, 255, 255, 0.9) , 4px 4px 8px rgb(185, 185, 185);
   border: solid rgba(0, 0, 0, 0.01) 1px;
 }
 
@@ -33,7 +33,7 @@ input{
   min-height: 54px;
   padding: 16px;
   border-radius: 12px;
-  box-shadow: 4px 4px 4px rgb(204, 204, 204) inset , -4px -4px 8px rgba(255, 255, 255, 0.5) inset;
+  box-shadow: 5px 5px 10px rgb(204, 204, 204) inset , -4px -4px 16px rgb(255, 255, 255) inset;
 background: rgba(255, 255, 255, 0.05);
 border: solid rgba(0, 0, 0, 0.025) 1px;
 
