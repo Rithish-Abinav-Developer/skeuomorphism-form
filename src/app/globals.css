@@ -134,47 +134,47 @@ body{
   --radio-dot: radial-gradient(circle at 35% 30%, #ffffff, var(--accent) 70%);
 }
 
-/* ---- Claymorphism ------------------------------------------------ */
+/* ---- Claymorphism — premium dark clay ----------------------------- */
 .page[data-theme="claymorphism"]{
-  --page-bg: linear-gradient(160deg, #ffe3ec 0%, #ffe9d6 50%, #e3e6ff 100%);
+  --page-bg: radial-gradient(circle at 30% 15%, #1c1c1c 0%, #0b0b0b 60%, #050505 100%);
 
-  --form-bg: linear-gradient(160deg, #fff3f8 0%, #ffe9da 100%);
-  --form-border: rgba(255, 255, 255, 0.6);
+  --form-bg: linear-gradient(160deg, #1c1c1c 0%, #161616 55%, #111111 100%);
+  --form-border: rgba(255, 255, 255, 0.05);
   --form-shadow:
-    -14px -14px 30px rgba(255, 255, 255, 0.9),
-    14px 14px 34px rgba(210, 160, 190, 0.45),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
-  --form-radius: 34px;
+    0 22px 48px rgba(0, 0, 0, 0.55),
+    0 4px 10px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  --form-radius: 32px;
   --form-blur: 0px;
   --surface-blur: 0px;
 
-  --input-bg: #ffeef5;
-  --input-border: rgba(255, 255, 255, 0.7);
+  --input-bg: linear-gradient(160deg, #1c1c1c 0%, #141414 100%);
+  --input-border: rgba(255, 255, 255, 0.05);
   --input-shadow:
-    inset 2px 2px 6px rgba(210, 160, 190, 0.35),
-    inset -2px -2px 6px rgba(255, 255, 255, 0.85),
-    0 6px 14px rgba(210, 160, 190, 0.25);
+    0 10px 22px rgba(0, 0, 0, 0.45),
+    0 2px 5px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
   --input-radius: 20px;
 
-  --text-primary: #5b3a52;
-  --text-muted:   rgba(91, 58, 82, 0.65);
-  --text-faint:   rgba(91, 58, 82, 0.4);
+  --text-primary: #f2f2f2;
+  --text-muted:   rgba(242, 242, 242, 0.55);
+  --text-faint:   rgba(242, 242, 242, 0.32);
 
   --btn-bg: linear-gradient(155deg, var(--accent) 0%, var(--accent-2) 100%);
-  --btn-text: #ffffff;
+  --btn-text: #071019;
   --btn-shadow:
-    -8px -8px 16px rgba(255, 255, 255, 0.85),
-    8px 8px 20px rgba(210, 160, 190, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.5);
-  --btn-radius: 20px;
+    0 12px 26px rgba(51, 201, 251, 0.3),
+    0 4px 10px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  --btn-radius: 24px;
 
-  --radio-bg: #ffeef5;
-  --radio-border: rgba(255, 255, 255, 0.7);
+  --radio-bg: linear-gradient(160deg, #1c1c1c 0%, #141414 100%);
+  --radio-border: rgba(255, 255, 255, 0.06);
   --radio-shadow:
-    inset 2px 2px 5px rgba(210, 160, 190, 0.35),
-    inset -2px -2px 5px rgba(255, 255, 255, 0.85),
-    0 3px 8px rgba(210, 160, 190, 0.2);
-  --radio-dot: radial-gradient(circle at 35% 30%, #ffd2e6, var(--accent-2) 70%);
+    0 8px 18px rgba(0, 0, 0, 0.45),
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  --radio-dot: radial-gradient(circle at 35% 30%, #8fe9ff, var(--accent-2) 70%);
 }
 
 /* -------------------------------------------------------------
@@ -510,7 +510,94 @@ input:-webkit-autofill:focus{
 }
 
 /* -------------------------------------------------------------
-   9. Responsive
+   9. Claymorphism — dark clay refinements
+   (scoped to [data-theme="claymorphism"] only — skeuomorphism
+   and glassmorphism are untouched by every rule below)
+------------------------------------------------------------- */
+.page[data-theme="claymorphism"] input:hover{
+  transform: translateY(-2px);
+  box-shadow: var(--input-shadow), 0 14px 26px rgba(0, 0, 0, 0.4);
+}
+
+.page[data-theme="claymorphism"] input:focus,
+.page[data-theme="claymorphism"] input:focus-visible{
+  transform: translateY(-2px) scale(1.01);
+  border-color: var(--accent);
+  box-shadow:
+    var(--input-shadow),
+    0 0 0 4px rgba(51, 201, 251, 0.22),
+    0 14px 30px rgba(51, 201, 251, 0.18);
+}
+
+.page[data-theme="claymorphism"] .submit_btn{
+  transition:
+    background var(--dur-slow) var(--ease),
+    box-shadow var(--dur) var(--ease),
+    border-radius var(--dur-slow) var(--ease),
+    transform var(--dur-fast) var(--ease),
+    filter var(--dur-fast) var(--ease);
+}
+
+.page[data-theme="claymorphism"] .submit_btn:hover{
+  transform: translateY(-3px);
+  filter: brightness(1.05);
+  box-shadow: var(--btn-shadow), 0 16px 34px rgba(51, 201, 251, 0.3);
+}
+
+.page[data-theme="claymorphism"] .submit_btn:active{
+  transform: translateY(2px) scale(0.95);
+  filter: brightness(0.96);
+  box-shadow:
+    0 4px 10px rgba(51, 201, 251, 0.22),
+    0 2px 4px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.page[data-theme="claymorphism"] .radio_select label{
+  transition:
+    background var(--dur-slow) var(--ease),
+    box-shadow var(--dur) var(--ease),
+    border-color var(--dur-slow) var(--ease),
+    transform var(--dur-fast) var(--ease);
+}
+
+.page[data-theme="claymorphism"] .radio_select label:hover{
+  transform: translateY(-1px);
+  box-shadow: var(--radio-shadow), 0 0 0 4px rgba(51, 201, 251, 0.18);
+}
+
+.page[data-theme="claymorphism"] .radio_select input:checked + label{
+  box-shadow:
+    0 6px 14px rgba(51, 201, 251, 0.3),
+    0 2px 6px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.page[data-theme="claymorphism"] .theme_switch{
+  background: linear-gradient(160deg, #1c1c1c, #141414);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.page[data-theme="claymorphism"] .theme_switch_thumb{
+  box-shadow:
+    0 6px 14px rgba(51, 201, 251, 0.35),
+    0 2px 6px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.page[data-theme="claymorphism"] .theme_option{
+  color: rgba(242, 242, 242, 0.55);
+}
+
+.page[data-theme="claymorphism"] .theme_option:hover{
+  color: #f2f2f2;
+}
+
+/* -------------------------------------------------------------
+   10. Responsive
 ------------------------------------------------------------- */
 @media screen and (max-width: 767px){
   form{
@@ -542,7 +629,7 @@ input:-webkit-autofill:focus{
 }
 
 /* -------------------------------------------------------------
-   10. Reduced motion
+   11. Reduced motion
 ------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce){
   *{
